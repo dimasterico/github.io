@@ -1,5 +1,5 @@
 *{margin: 0; padding: 0; overflow: hidden;}
-div
+#main
 {
     height: 100vh;
     width: 100vw;
@@ -8,7 +8,7 @@ div
     justify-content: center;
     align-items: center;
 }
-div>div:nth-child(1)
+#main>div:nth-child(1)
 {
     position: absolute;
     height: 200vh;
@@ -20,7 +20,7 @@ div>div:nth-child(1)
     font-size: 10rem;
     font-family: cursive;
 }
-div>div:nth-child(2)
+#main>div:nth-child(2)
 {
     position: absolute;
     height: 200vh;
@@ -32,7 +32,7 @@ div>div:nth-child(2)
     font-size: 8rem;
     font-family: 'Courier New', Courier, monospace;
 }
-div>div:nth-child(3)
+#main>div:nth-child(3)
 {
     position: absolute;
     height: 80vh;
@@ -52,6 +52,6 @@ div>div:nth-child(3)
     flex-wrap: wrap;
     flex-direction: column;
 }
-h1,p,h2{width: 70vw; padding-bottom: 4vh;}
-h1,h2{text-align: center;}
-a{color: white}
+#main h1,#main p,#main h2{width: 70vw; padding-bottom: 4vh;}
+#main h1,#main h2{text-align: center;}
+#main a{color: white}
