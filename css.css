@@ -49,6 +49,6 @@
     flex-wrap: wrap;
     flex-direction: column;
 }
-#main h1,#main p,#main h2{width: 70vw; padding-bottom: 4vh;}
-#main h1,#main h2{text-align: center;}
-#main a{color: white}
+#content h1,#content p,#content h2{width: 70vw; padding-bottom: 4vh;}
+#content h1,#content h2{text-align: center;}
+#content a{color: white}
