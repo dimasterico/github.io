@@ -1,3 +1,4 @@
+
 *{margin: 0; padding: 0; overflow: hidden;}
 #main
 {
@@ -42,4 +43,8 @@
 }
 #content h1,#content p,#content h2{width: 70vw; padding-bottom: 4vh;}
 #content h1,#content h2{text-align: center;}
-#content a{color: white}
+#content a
+{
+    padding: 0.5vh;
+    border-radius: 1vh;
+}
