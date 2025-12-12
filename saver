@@ -1,0 +1,60 @@
+using UnityEngine;
+
+[System.Serializable] // Обязательно для JsonUtility
+public class GameData 
+{
+    public int _save_score;
+    public string _save_player_name;
+    public float[] _save_pos = new float[3]; 
+}
+
+public class SAVER : MonoBehaviour
+{
+    public GameObject _player;
+    public string _player_name;
+    public int _score = 0;
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.S))
+        {
+            SAVE_GAME();
+        }
+        
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            LOAD_GAME();
+        }
+    }
+
+    public void SAVE_GAME()
+    {
+        GameData _data = new GameData();
+        
+        _data._save_score = _score;
+        _data._save_player_name = _player_name;
+        _data._save_pos[0] = _player.transform.position.x;
+        _data._save_pos[1] = _player.transform.position.y;
+        _data._save_pos[2] = _player.transform.position.z;
+        
+        string json = JsonUtility.ToJson(_data);
+        System.IO.File.WriteAllText(Application.persistentDataPath + "/save_1.json", json);
+        
+        print("save");
+    }
+
+    public void LOAD_GAME()
+    {
+        string _path = Application.persistentDataPath + "/save_1.json";
+        
+        if (System.IO.File.Exists(_path))
+        {
+            string json = System.IO.File.ReadAllText(_path);
+            GameData data = JsonUtility.FromJson<GameData>(json);
+            
+            _score = data._save_score;
+            _player.transform.position = new Vector3(data._save_pos[0],data._save_pos[1],data._save_pos[2]);
+        }
+        
+        print("load");
+    }
+}
