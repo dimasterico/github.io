@@ -2,8 +2,11 @@
 #visit
 {
     position: absolute;
+    right: 0;
+    top: 0;
     color: #00ff16;
     background: #000000;
+    font-famili: math;
     z-index: 100;
 }
 #main
